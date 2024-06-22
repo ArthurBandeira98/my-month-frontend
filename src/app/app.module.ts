@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NbActionsModule, NbButtonModule, NbIconModule, NbLayoutModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
+import { HeaderComponent } from './header/header.component';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NbThemeModule.forRoot({name: 'dark'}),
+    NbSidebarModule.forRoot(),
+    NbSidebarModule,
+    NbLayoutModule,
+    NbButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
