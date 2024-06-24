@@ -11,7 +11,11 @@ export class HeaderComponent {
   constructor(private sideBarService: NbSidebarService) {}
 
   toggle() {
-    this.sideBarService.toggle(false, 'left');
+    this.sideBarService.toggle(false, 'menu-sidebar');
+  }
+
+  onLogout() {
+
   }
 
 }
