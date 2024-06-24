@@ -10,16 +10,21 @@ export class SidebarComponent {
 
   items: NbMenuItem[] = [
     {
-      title: 'Home',
+      title: 'Inicio',
       icon: 'home-outline',
-      link: '',
+      link: 'home',
     },
     {
-      title: 'Balance',
+      title: 'Balanço Atual',
+      icon: 'pie-chart-outline',
+      link: 'current-month',
+    },
+    {
+      title: 'Balanços Anteriores',
       icon: 'pie-chart-outline',
     },
     {
-      title: 'Logout',
+      title: 'Sair',
       icon: 'log-out-outline',
     },
   ];
