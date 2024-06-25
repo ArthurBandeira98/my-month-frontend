@@ -11,3 +11,9 @@ th, td {
 button {
   margin: 0;
 }
+
+.example-items-rows {
+  > * {
+    margin: 0.2rem;
+  }
+}

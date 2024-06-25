@@ -1,48 +1,68 @@
-<nb-layout>
-  <nb-layout-column>
-    <nb-card accent="danger">
-      <nb-card-header>Despesas</nb-card-header>
-      <nb-card-body>
-        <table>
-          <thead>
-            <th>Nome</th>
-            <th>Valor</th>
-            <th>Ações</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let data of datas">
-              <td>{{ data.name }}</td>
-              <td>{{ data.value | currency: 'BRL' }}</td>
-              <td>
-                <button nbButton size="small" status="primary">Ações</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </nb-card-body>
-    </nb-card>
-  </nb-layout-column>
-  <nb-layout-column>
-    <nb-card accent="success">
-      <nb-card-header>Receitas</nb-card-header>
-      <nb-card-body>
-        <table>
-          <thead>
-            <th>Nome</th>
-            <th>Valor</th>
-            <th>Ações</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let data of datas">
-              <td>{{ data.name }}</td>
-              <td>{{ data.value | currency: 'BRL' }}</td>
-              <td>
-                <button nbButton size="small" status="primary">Ações</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </nb-card-body>
-    </nb-card>
-  </nb-layout-column>
-</nb-layout>
+<nb-card accent="primary">
+  <nb-card-header>Balanço Mensal - Junho - 2024</nb-card-header>
+  <nb-card-body>
+    <button nbButton status="primary" (click)="open()"><nb-icon icon="plus-outline"></nb-icon></button>
+    <br>
+    <br>
+    <nb-tabset>
+      <nb-tab tabTitle="Despesas">
+        <nb-card accent="primary">
+          <nb-card-header>Despesas</nb-card-header>
+          <nb-card-body>
+            <table>
+              <thead>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Ações</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of datas">
+                  <td>{{ data.name }}</td>
+                  <td>{{ data.value | currency: 'BRL' }}</td>
+                  <td class="example-items-rows">
+                    <button nbButton size="small" status="warning"><nb-icon icon="edit-outline"></nb-icon></button>
+                    <button nbButton size="small" status="danger"><nb-icon icon="trash-outline"></nb-icon></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </nb-card-body>
+          <nb-card-footer>Total 1360,00 </nb-card-footer>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="Receitas">
+        <nb-card accent="primary">
+          <nb-card-header>Receitas</nb-card-header>
+          <nb-card-body>
+            <table>
+              <thead>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Ações</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of datas">
+                  <td>{{ data.name }}</td>
+                  <td>{{ data.value | currency: 'BRL' }}</td>
+                  <td class="example-items-rows">
+                    <button nbButton size="small" status="warning"><nb-icon icon="edit-outline"></nb-icon></button>
+                    <button nbButton size="small" status="danger"><nb-icon icon="trash-outline"></nb-icon></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </nb-card-body>
+          <nb-card-footer>Total 1360,00 </nb-card-footer>
+        </nb-card>
+      </nb-tab>
+      <nb-tab tabTitle="Liquido">
+        <nb-card accent="primary">
+          <nb-card-header>Liquido</nb-card-header>
+          <nb-card-body>
+            Saldo Liquido - {{ 2000 | currency: 'BRL' }}
+          </nb-card-body>
+        </nb-card>
+      </nb-tab>
+    </nb-tabset>
+  </nb-card-body>
+</nb-card>

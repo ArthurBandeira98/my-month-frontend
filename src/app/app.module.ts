@@ -19,7 +19,7 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NbThemeModule.forRoot({name: 'dark'}),
+    NbThemeModule.forRoot({name: 'default'}),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
     NbButtonModule,
