@@ -1,0 +1,17 @@
+.form-group {
+  margin-bottom: 30px;
+}
+
+nb-card-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+nb-card-footer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+button {
+  margin-left: 0.5rem;
+}

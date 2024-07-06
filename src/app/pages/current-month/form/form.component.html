@@ -1,9 +1,39 @@
-<ng-template #dialog let-data let-ref="dialogRef">
-  <nb-card>
-    <nb-card-header>Template Dialog</nb-card-header>
-    <nb-card-body>{{ data }}</nb-card-body>
-    <nb-card-footer>
-      <button nbButton (click)="ref.close()">Close Dialog</button>
-    </nb-card-footer>
-  </nb-card>
-</ng-template>
+<nb-card>
+  <nb-card-header>{{ title }}</nb-card-header>
+  <nb-card-body>
+    <form>
+      <div class="form-group">
+        <label for="name">Nome </label>
+        <input nbInput id="name" type="text" name="nome" />
+      </div>
+      <div class="form-group">
+        <label for="value">Valor </label>
+        <input nbInput id="value" type="number" name="valor" />
+      </div>
+      <div class="form-group">
+        <label for="status">Status </label>
+        <nb-select id="status" name="status">
+          <nb-option *ngFor="let s of statusOptions" [value]="s">{{ s }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="form-group">
+        <label for="category">Categoria </label>
+        <nb-select id="category" name="category">
+          <nb-option *ngFor="let c of categoryOptions" [value]="c">{{ c }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Data de Vencimento </label>
+        <input nbInput id="dueDate" type="date" name="dataVencimento" />
+      </div>
+      <div class="form-group">
+        <label for="paymentDate">Data de Pagamento: </label>
+        <input nbInput id="paymentDate" type="date" name="dataPagamento" />
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="primary" (click)="submit()">Salvar</button>
+    <button nbButton status="secondary" (click)="close()">Cancelar</button>
+  </nb-card-footer>
+</nb-card>

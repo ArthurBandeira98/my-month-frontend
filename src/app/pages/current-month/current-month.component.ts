@@ -10,8 +10,8 @@ import { CurrentMonthFormComponent } from './form/form.component';
 export class CurrentMonthComponent implements OnInit {
 
   datas = [
-    { name: 'teste', value: 1200 },
-    { name: 'Nubank', value: 140 },
+    { name: 'teste', value: 1200, status: 'Pago', dataVencimento: '26/06/2025', dataPagamento: '26/06/2024' },
+    { name: 'Nubank', value: 140, status: 'Não Pago', dataVencimento: '26/06/2025', dataPagamento: null },
   ];
 
   constructor(private dialogService: NbDialogService) {}
@@ -20,7 +20,22 @@ export class CurrentMonthComponent implements OnInit {
   }
 
   open() {
-    this.dialogService.open(CurrentMonthFormComponent);
+    this.dialogService.open(CurrentMonthFormComponent, {
+      context: {
+        title: 'Novo Item',
+        item: ''
+      }
+    });
+  }
+
+  onEdit(item: any) {
+    console.log(item);
+    this.dialogService.open(CurrentMonthFormComponent, {
+      context: {
+        title: 'Editar Item',
+        item: item
+      }
+    });
   }
 
 }

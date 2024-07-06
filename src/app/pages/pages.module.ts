@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { NbActionsModule, NbButtonModule, NbCardModule, NbDialogModule, NbIconModule, NbLayoutModule, NbTabsetModule } from '@nebular/theme';
+import { NbActionsModule, NbButtonModule, NbCardModule, NbDialogModule, NbIconModule, NbInputModule, NbLayoutModule, NbSelectModule, NbTabsetModule } from '@nebular/theme';
 import { CurrentMonthComponent } from './current-month/current-month.component';
 import { CurrentMonthFormComponent } from './current-month/form/form.component';
 
@@ -19,7 +19,9 @@ import { CurrentMonthFormComponent } from './current-month/form/form.component';
     NbActionsModule,
     NbIconModule,
     NbTabsetModule,
-    NbDialogModule.forRoot()
+    NbDialogModule.forRoot(),
+    NbInputModule,
+    NbSelectModule
   ]
 })
 export class PagesModule { }

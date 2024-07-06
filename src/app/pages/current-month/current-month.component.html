@@ -13,12 +13,18 @@
               <thead>
                 <th>Nome</th>
                 <th>Valor</th>
+                <th>Status</th>
+                <th>Data Pagamento</th>
+                <th>Data Vencimento</th>
                 <th>Ações</th>
               </thead>
               <tbody>
                 <tr *ngFor="let data of datas">
                   <td>{{ data.name }}</td>
                   <td>{{ data.value | currency: 'BRL' }}</td>
+                  <td>{{ data.status }}</td>
+                  <td>{{ data.dataPagamento }}</td>
+                  <td>{{ data.dataVencimento }}</td>
                   <td class="example-items-rows">
                     <button nbButton size="small" status="warning"><nb-icon icon="edit-outline"></nb-icon></button>
                     <button nbButton size="small" status="danger"><nb-icon icon="trash-outline"></nb-icon></button>
@@ -38,14 +44,20 @@
               <thead>
                 <th>Nome</th>
                 <th>Valor</th>
+                <th>Status</th>
+                <th>Data Pagamento</th>
+                <th>Data Vencimento</th>
                 <th>Ações</th>
               </thead>
               <tbody>
                 <tr *ngFor="let data of datas">
                   <td>{{ data.name }}</td>
                   <td>{{ data.value | currency: 'BRL' }}</td>
+                  <td>{{ data.status }}</td>
+                  <td>{{ data.dataPagamento }}</td>
+                  <td>{{ data.dataVencimento }}</td>
                   <td class="example-items-rows">
-                    <button nbButton size="small" status="warning"><nb-icon icon="edit-outline"></nb-icon></button>
+                    <button nbButton size="small" status="warning" (click)="onEdit(data)"><nb-icon icon="edit-outline"></nb-icon></button>
                     <button nbButton size="small" status="danger"><nb-icon icon="trash-outline"></nb-icon></button>
                   </td>
                 </tr>
